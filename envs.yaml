@@ -1,0 +1,21 @@
+# This YAML file contains configuration per environment.
+# Think of it as "variables" for dev / staging / prod.
+# The Python script will read this file and pick the section that matches --env
+
+dev:
+  app_name: sample-app              # will become metadata.name, labels, container name
+  image: "ghcr.io/your-org/sample-app:1.0.0-dev"  # docker image for DEV
+  replicas: 1                       # 1 pod in dev
+  namespace: "dev"                  # target k8s namespace
+
+staging:
+  app_name: sample-app
+  image: "ghcr.io/your-org/sample-app:1.0.0-rc1"
+  replicas: 2
+  namespace: "staging"
+
+prod:
+  app_name: sample-app
+  image: "ghcr.io/your-org/sample-app:1.0.0"
+  replicas: 3                       # prod has more pods
+  namespace: "prod"

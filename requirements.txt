@@ -1,0 +1,5 @@
+# This file lists the Python packages the script needs.
+# We'll install them with: pip install -r requirements.txt
+
+PyYAML==6.0.2     # to read YAML files (envs.yaml)
+Jinja2==3.1.4     # to render templates (deployment.yaml.j2 → real .yaml)
